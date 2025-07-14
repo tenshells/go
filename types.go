@@ -9,7 +9,8 @@ type Address struct {
 	HouseNumber string
 	Street string
 	City string
-	State string
+// adding lowercase here, its is now not exported, ie other packages will not be able to use this, does not matter in this case as this file is meant to be used by this file only.
+	state string
 	Pincode int
 	Country string
 }
@@ -19,14 +20,14 @@ type Address2 struct {
 	HouseNumber string
 	Street string
 	City string
-	State string
+	state string
 	Pincode int
 	Country string
 }
 
 
 func (a Address2) String() string {
-	return fmt.Sprintf("%s, %s\n%s\n%s, %s\n%v\n%v", a.Name, a.HouseNumber, a.Street, a.City, a.State, a.Pincode, a.Country)
+	return fmt.Sprintf("%s, %s\n%s\n%s, %s\n%v\n%v", a.Name, a.HouseNumber, a.Street, a.City, a.state, a.Pincode, a.Country)
 }
 
 func main() {
